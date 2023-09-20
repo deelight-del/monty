@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-/*include monty.h*/
+#include "monty.h"
 
 /**
  * main - The main funciton of our monty file
