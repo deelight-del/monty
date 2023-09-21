@@ -1,6 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "monty.h"
+#include <stdio.h>
 
 /**
  * main - The main funciton of our monty file
@@ -12,11 +11,18 @@
 
 int main(int argc, char **argv)
 {
+	char *buff;
+	size_t n;
+
+	n = 0;
+	buff = NULL;
 	(void) argv;
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
+	read_file(&buff, &n, argv[1]);
+	printf("%s\n", buff);
 	return (0);
 }
