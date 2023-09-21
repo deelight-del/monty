@@ -55,9 +55,9 @@ char **tokenizer(char *line_string)
  * free_array - Function to free the respective array created from tokenization
  * @array: Array to be tokenized
  * @n: used to see if free_array is within function 'tokenizer' or not.
- *
+ * description: frees allocated space
  * Return: Nothing
- */
+*/
 
 void free_array(char **array, int n)  /*USAGE: (array, -1)*/
 {
