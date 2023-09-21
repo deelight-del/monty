@@ -1,7 +1,6 @@
 #include "monty.h"
 #include <stdio.h>
 
-
 /**
  * main - The main funciton of our monty file
  * @argc: The count of the arguments

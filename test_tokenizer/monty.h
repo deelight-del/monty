@@ -40,7 +40,7 @@ typedef struct instruction_s
 } instruction_t;
 
 
-stack_t *head;
+/*stack_t *head;*/
 
 /*Function prototypes*/
 ssize_t read_file(char **buff, size_t *n, char *file_path);
