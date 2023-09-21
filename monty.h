@@ -47,5 +47,6 @@ extern stack_t *head;
 void read_file(char *buff, int n, char *file_path);
 char *get_name(char *str);
 char **tokenizer(char *line_string);
-void free_array(char **array, int n);  /*USAGE: (array, -1)*/
+void (*get_op_func(char *str))(stack_t **stack, unsigned int line_number);
+void free_array(char **array, int n);
 #endif
