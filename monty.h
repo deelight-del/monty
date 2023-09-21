@@ -41,7 +41,7 @@ typedef struct instruction_s
 } instruction_t;
 
 
-/*stack_t *head;*/
+extern stack_t *head;
 
 /*Function prototypes*/
 void read_file(char *buff, int n, char *file_path);
