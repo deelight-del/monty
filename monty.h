@@ -1,5 +1,13 @@
 #ifndef MONTY_H
 #define MONTY_H
+
+/*Include files*/
+#include <stddef.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <stdio.h>
+#include <unistd.h>
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -33,4 +41,7 @@ typedef struct instruction_s
 
 
 stack_t *head;
+
+/*Function prototypes*/
+ssize_t read_file(char **buff, size_t *n, char *file_path);
 #endif
