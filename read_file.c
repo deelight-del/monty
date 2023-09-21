@@ -8,22 +8,19 @@
 */
 
 
-ssize_t read_file(char **buff, size_t *n, char *file_path)
+void read_file(char *buff, int n, char *file_path)
 {
-	/*open file*/
 	FILE *file_ptr;
-	ssize_t bytes_r;
 
 	file_ptr = fopen(file_path, "r");
 	if (file_ptr == NULL)
 	{
-		/*you need to move the file pointer to print only file name and not*/
-		fprintf(stderr, "Can't open %s\n", file_path);
+		fprintf(stderr, "Can't open %s\n", get_name(file_path));
 		exit(EXIT_FAILURE);
 	}
-	else
+	while (fgets(buff, n, file_ptr))
 	{
-		bytes_r = getline(buff, n, file_ptr);
-		return (bytes_r);
+		printf("%s", buff);
 	}
+	fclose(file_ptr);
 }
