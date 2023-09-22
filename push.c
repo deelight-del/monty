@@ -8,20 +8,20 @@
  * Return: nothing
 */
 
-stack_t **head = NULL;
 
 void push(stack_t **stack, unsigned int line_number)
 {
+	(void)stack, (void)line_number;
 	if (stack == NULL)
 		return;
-	if (*head == NULL)
+	if (head == NULL)
 	{
 		head = *stack;
 	}
 	else
 	{
-		(*stack)->next = *head;
-		(*head)->prev = *stack;
-		*head = stack;
+		(*stack)->next = head;
+		head->prev = *stack;
+		head = *stack;
 	}
 }

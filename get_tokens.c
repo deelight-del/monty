@@ -37,7 +37,7 @@ char **get_tokens(char *line)
 			return (tokens);
 		}
 		tokens[count] = token;
-		count ++;
+		count++;
 		token = strtok(NULL, delim);
 	}
 	tokens[count] = NULL;

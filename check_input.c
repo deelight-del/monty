@@ -2,7 +2,7 @@
 
 /**
  * takes_arg - checks if the functions takes argument
- * @str: opcode
+ * @opc: opcode
  * description: checks if an opcode takes argumets or not
  * Return: 0 (takes args) 1 (does not) -1 (bad opcode)
 */
