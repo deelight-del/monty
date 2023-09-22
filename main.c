@@ -9,12 +9,15 @@
  * Return: An integer.
  */
 
+stack_t *head = NULL;
+
 int main(int argc, char **argv)
 {
 	char buff[100];
 	int  n;
+
 	n = 100;
-	
+
 	(void) argv;
 	if (argc != 2)
 	{
