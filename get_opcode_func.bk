@@ -28,7 +28,7 @@ void (*get_op_func(char *str))(stack_t **stack, unsigned int line_number)
 	}
 
 	i = 0;
-	while (ops[i] != NULL)
+	while (ops[i].opcode != NULL)
 	{
 		if (strcmp(ops[i], str) == 0)
 		{
