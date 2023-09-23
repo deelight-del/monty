@@ -38,3 +38,24 @@ char **get_tokens(char *line)
 	tokens[count] = NULL;
 	return (tokens);
 }
+
+/**
+ * free_tokens - Function to free an array of tokens
+ * @tokens: An array of given tokens to be freed.
+ *
+ * Return: Nothing.
+ */
+
+void free_tokens(char **tokens)
+{
+	int i = 0;
+
+	if (tokens == NULL)
+		return;
+
+	for (i = 0; tokens[i] != NULL; i++)
+	{
+		free(tokens[i]);
+	}
+	free(tokens);
+}
