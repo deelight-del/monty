@@ -51,8 +51,10 @@ void (*get_op_func(char *str))(stack_t **stack, unsigned int line_number);
 void free_array(char **array, int n);
 char **get_tokens(char *line);
 void print_arr(char **arr);
-int takes_arg(char *opc);
+int takes_arg(char **opc);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 stack_t *get_node(int val);
+void exec_cmd_args(char **tokens, int line_number);
+void exec_cmd_noarg(char **tokens, int line_number);
 #endif

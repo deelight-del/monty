@@ -29,13 +29,8 @@ char **get_tokens(char *line)
 		free(tokens);
 		return (NULL);
 	}
-	while (token != NULL)
+	while (token != NULL && count <= 2)
 	{
-		if (count > 2)
-		{
-			tokens[count - 1] = NULL;
-			return (tokens);
-		}
 		tokens[count] = token;
 		count++;
 		token = strtok(NULL, delim);
