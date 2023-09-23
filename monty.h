@@ -61,5 +61,6 @@ void pop(stack_t **stack, unsigned int line_number);
 void exec_cmd_args(char **tokens, int line_number);
 void exec_cmd_noarg(char **tokens, int line_number);
 void free_stack(void);
+int is_digit(char *str);
 
 #endif
