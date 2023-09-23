@@ -41,6 +41,7 @@ void read_file(char *buff, int n, char *file_path)
 		}
 		line_number++;
 	}
+	free_stack();
 	fclose(file_ptr);
 }
 /**
@@ -66,6 +67,7 @@ void exec_cmd_args(char **tokens, int line_number)
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", line_number);
 			free(tokens);
+			free_stack();
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -92,6 +94,7 @@ void exec_cmd_noarg(char **tokens, int line_number)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, tokens[0]);
 		free(tokens);
+		free_stack();
 		exit(EXIT_FAILURE);
 	}
 	free(tokens);
