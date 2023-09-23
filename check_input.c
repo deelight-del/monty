@@ -8,11 +8,11 @@
 */
 
 
-int takes_arg(char *opc)
+int takes_arg(char **opc)
 {
 	if (opc == NULL)
 		return (-1);
-	else if (strcmp(opc, "push") == 0)
+	else if (strcmp(opc[0], "push") == 0)
 		return (0);
 	else
 		return (1);

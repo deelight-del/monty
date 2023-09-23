@@ -1,0 +1,4 @@
+push 2 1 3
+push 1 2 3
+push  3 6
+pall
