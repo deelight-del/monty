@@ -12,9 +12,7 @@ void read_file(char *buff, int n, char *file_path)
 {
 	FILE *file_ptr;
 	char **tokens;
-	int tak_arg, val;
-	stack_t *new_node;
-	void (*f)(stack_t **stack, unsigned int line_number);
+	int tak_arg;
 	unsigned int line_number;
 
 	file_ptr = fopen(file_path, "r");
@@ -27,27 +25,75 @@ void read_file(char *buff, int n, char *file_path)
 	while (fgets(buff, n, file_ptr))
 	{
 		tokens = get_tokens(buff);
-		tak_arg = takes_arg(tokens[0]);
+		tak_arg = takes_arg(tokens);
 		if (tak_arg == 0)
 		{
-			val = atoi(tokens[1]);
-			if (tokens[1] == NULL || val == 0)
-			{
-				fprintf(stderr, "L%d: usage: push integer\n", line_number);
-				free(tokens);
-				fclose(file_ptr);
-				exit(EXIT_FAILURE);
-			}
-			new_node = get_node(val);
-			push(&new_node, line_number);
+			exec_cmd_args(tokens, line_number);
 		}
 		else if (tak_arg == 1)
 		{
-			f = get_op_func(tokens[0]); /*check if f is NULL*/
-			f(NULL, line_number);
+			exec_cmd_noarg(tokens, line_number);
 		}
-		free(tokens);
+		else
+		{
+			line_number++;
+			continue;
+		}
 		line_number++;
 	}
 	fclose(file_ptr);
+}
+/**
+ * exec_cmd_args - runs opcode with arguments
+ * @tokens: array of arguments
+ * @line_number: line of command in file
+ * description: executes an opcode that takes arguments
+ * Return: nothing
+*/
+void exec_cmd_args(char **tokens, int line_number)
+{
+	stack_t *new_node;
+	int val;
+
+	if ((tokens[1][0]) - 48 == 0)
+	{
+		val = 0;
+	}
+	else
+	{
+		val = atoi(tokens[1]);
+		if (tokens[1] == NULL || val == 0)
+		{
+			fprintf(stderr, "L%d: usage: push integer\n", line_number);
+			free(tokens);
+			exit(EXIT_FAILURE);
+		}
+	}
+	free(tokens);
+	new_node = get_node(val);
+	/*check if getnode succeeded*/
+	push(&new_node, line_number);
+}
+
+/**
+ * exec_cmd_noarg - runs opcodes without arguments
+ * @tokens: array containing command
+ * @line_number: line number of cmmand
+ * description: executes an opcode that does not take an argument
+ * Return: nothing
+*/
+
+void exec_cmd_noarg(char **tokens, int line_number)
+{
+	void (*f)(stack_t **stack, unsigned int line_number);
+
+	f = get_op_func(tokens[0]);
+	if (f == NULL)
+	{
+		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, tokens[0]);
+		free(tokens);
+		exit(EXIT_FAILURE);
+	}
+	free(tokens);
+	f(NULL, line_number);
 }
