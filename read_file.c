@@ -51,31 +51,52 @@ void read_file(char *buff, int n, char *file_path)
  * description: executes an opcode that takes arguments
  * Return: nothing
 */
+
 void exec_cmd_args(char **tokens, int line_number)
 {
 	stack_t *new_node;
 	int val;
 
-	if ((tokens[1][0]) - 48 == 0)
+	if (tokens[1] != NULL)
 	{
-		val = 0;
-	}
-	else
-	{
-		val = atoi(tokens[1]);
-		if (tokens[1] == NULL || val == 0)
+		if (is_digit(tokens[1]) == 1)
 		{
-			fprintf(stderr, "L%d: usage: push integer\n", line_number);
+			val = atoi(tokens[1]);
 			free(tokens);
-			free_stack();
-			exit(EXIT_FAILURE);
+			new_node = get_node(val);
+			/*check if getnode succeeded*/
+			push(&new_node, line_number);
+			return;
 		}
 	}
+	fprintf(stderr, "L%d: usage: push integer\n", line_number);
 	free(tokens);
-	new_node = get_node(val);
-	/*check if getnode succeeded*/
-	push(&new_node, line_number);
+	free_stack();
+	exit(EXIT_FAILURE);
+
 }
+
+/**
+ * is_digit - Function to check if a string value contains only digits
+ * @str: character pointer to evaluate
+ *
+ * Return: 1 if all digits, and 0 if not
+ */
+
+int is_digit(char *str)
+{
+	int i;
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		if (str[i] >= 48 && str[i] < 58)
+			continue;
+		else
+			return (0);
+	}
+	return (1);
+}
+
 
 /**
  * exec_cmd_noarg - runs opcodes without arguments
