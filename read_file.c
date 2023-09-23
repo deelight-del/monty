@@ -35,6 +35,7 @@ void read_file(char *buff, int n, char *file_path)
 			{
 				fprintf(stderr, "L%d: usage: push integer\n", line_number);
 				free(tokens);
+				fclose(file_ptr);
 				exit(EXIT_FAILURE);
 			}
 			new_node = get_node(val);
@@ -43,6 +44,7 @@ void read_file(char *buff, int n, char *file_path)
 		else if (tak_arg == 1)
 		{
 			f = get_op_func(tokens[0]);
+			free(tokens);
 			f(NULL, line_number);
 		}
 		else
