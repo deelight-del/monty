@@ -29,7 +29,7 @@ char **get_tokens(char *line)
 		free(tokens);
 		return (NULL);
 	}
-	while (token != NULL && count <= 2)
+	while (token != NULL && count <= 1)
 	{
 		tokens[count] = token;
 		count++;

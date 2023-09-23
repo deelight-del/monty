@@ -13,7 +13,6 @@ void pint(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
 
-	printf("I am entering here to print the last\n");
 	if (head == NULL)
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
