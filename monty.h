@@ -57,4 +57,5 @@ void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void free_tokens(char **tokens);
 stack_t *get_node(int val);
+void pop(stack_t **stack, unsigned int line_number);
 #endif

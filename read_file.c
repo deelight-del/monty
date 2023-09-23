@@ -43,15 +43,8 @@ void read_file(char *buff, int n, char *file_path)
 		}
 		else if (tak_arg == 1)
 		{
-			f = get_op_func(tokens[0]);
-			free(tokens);
+			f = get_op_func(tokens[0]); /*check if f is NULL*/
 			f(NULL, line_number);
-		}
-		else
-		{
-			free(tokens);
-			line_number++;
-			continue;
 		}
 		free(tokens);
 		line_number++;
