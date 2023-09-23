@@ -18,7 +18,7 @@ void read_file(char *buff, int n, char *file_path)
 	file_ptr = fopen(file_path, "r");
 	if (file_ptr == NULL)
 	{
-		fprintf(stderr, "Can't open %s\n", get_name(file_path));
+		fprintf(stderr, "Can't open file %s\n", get_name(file_path));
 		exit(EXIT_FAILURE);
 	}
 	line_number = 1;
