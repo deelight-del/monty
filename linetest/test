@@ -1,15 +1,7 @@
-			push 4			
-       		push 2		
-
-push 3	
-				           
-push
+					
 
 pall
 
-pop
-pop
-pop
-pop
-pop
-pop
+swap
+
+pall
