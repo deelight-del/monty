@@ -1,8 +1,23 @@
 #    sdhfkf nothing
 #Nothing should happen
 ####
-push 5
+push 15
+push 6
 pall
+sub
+pall
+push 2
+pall
+div
+pall
+push 7
+pall
+mul
+pall
+push 10
+pall
+mod
+
       		##
 pint
 Something####
