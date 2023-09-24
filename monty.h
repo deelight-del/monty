@@ -63,5 +63,6 @@ void exec_cmd_noarg(char **tokens, int line_number);
 void free_stack(void);
 int is_digit(char *str);
 void swap(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
 
 #endif
