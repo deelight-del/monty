@@ -29,6 +29,12 @@ char **get_tokens(char *line)
 		free(tokens);
 		return (NULL);
 	}
+	if (token[0] == 35)
+	{
+		tokens[0] = "nop";
+		return (tokens);
+	}
+
 	while (token != NULL && count <= 1)
 	{
 		tokens[count] = token;
