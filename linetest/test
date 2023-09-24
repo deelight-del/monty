@@ -3,5 +3,5 @@ push 76
 push 81
 push 65
 pall
-rotl
+rotr
 pall
