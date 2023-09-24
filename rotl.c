@@ -16,7 +16,10 @@ void rotl(stack_t **stack, unsigned int line_number)
 	(void) stack;
 	(void) line_number;
 
-	if (head != NULL || head->next != NULL)
+	if (head == NULL || head->next == NULL)
+		return;
+
+	else
 	{
 		temp = head;
 
