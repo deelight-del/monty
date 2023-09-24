@@ -15,7 +15,7 @@ void pchar(stack_t **stack, unsigned int line_number)
 
 	if (head == NULL)
 	{
-		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	if (head->n < 0 || head->n > 127)
