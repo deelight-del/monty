@@ -50,6 +50,12 @@ void div_m(stack_t **stack, unsigned int line_number)
 		free_stack();
 		exit(EXIT_FAILURE);
 	}
+	if (head->n == 0)
+	{
+		fprintf(stderr, "L%d: division by zero\n", line_number);
+		free_stack();
+		exit(EXIT_FAILURE);
+	}
 
 	temp = head->next->n / head->n;
 	pop(NULL, line_number);
@@ -105,6 +111,12 @@ void mod(stack_t **stack, unsigned int line_number)
 	if (head == NULL || head->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
+		free_stack();
+		exit(EXIT_FAILURE);
+	}
+	if (head->n == 0)
+	{
+		fprintf(stderr, "L%d: division by zero\n", line_number);
 		free_stack();
 		exit(EXIT_FAILURE);
 	}
