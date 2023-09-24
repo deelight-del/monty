@@ -23,6 +23,7 @@ void (*get_op_func(char *str))(stack_t **stack, unsigned int line_number)
 		{"div", div_m},
 		{"mul", mul},
 		{"mod", mod},
+		{"pchar", pchar},
 		{NULL, NULL}
 	};
 
