@@ -85,9 +85,12 @@ void exec_cmd_args(char **tokens, int line_number)
 
 int is_digit(char *str)
 {
-	int i;
+	int i = 0;
 
-	for (i = 0; str[i] != '\0'; i++)
+	if (str[0] == '-' || str[0] == '+')
+		i++;
+
+	for (; str[i] != '\0'; i++)
 	{
 		if (str[i] >= 48 && str[i] < 58)
 			continue;
