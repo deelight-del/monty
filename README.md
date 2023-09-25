@@ -2,9 +2,9 @@
 
 This is an ALX assigned project that involves building
 an interpreter for the monty programming language.
-The interpreter is meant to interprete the given monty 
+The interpreter is meant to interpret the given monty 
 byte code that was precompiled from the monty language.
-We are meant to implement some changes of call stack to 
+We are meant to implement some changes on the call stack to 
 be able to perform certain given operations.
 
 ### Installation
@@ -22,6 +22,8 @@ monty file
 Where file is a monty byte code that contains instructions
 and opcode for different operations.
 
-#Contributors
-[Akingbeni David][https://github.com/deelight-del]
-[Okibe Onmeje][https://github.com/Okibe00]
+### Contributors
+
+[Akingbeni David](https://github.com/deelight-del)
+
+[Okibe Onmeje](https://github.com/Okibe00)
